@@ -60,6 +60,10 @@
   .logo span { color: var(--black); }
   .topbar .phone { font-weight: 700; color: var(--black); font-size: 15px; }
   .topbar .phone strong { color: var(--red); }
+  .topbar-right { display: flex; align-items: center; gap: 18px; }
+  .topbar .student { font-weight: 600; font-size: 14px; color: var(--red); border: 1.5px solid var(--red); border-radius: 8px; padding: 6px 12px; white-space: nowrap; }
+  .topbar .student:hover { background: var(--red); color: #fff; }
+  footer a.student-link { color: #fff; text-decoration: underline; }
 
   /* Hero */
   .hero {
@@ -253,7 +257,10 @@
 <div class="topbar">
   <div class="topbar-inner">
     <div class="logo">AZ<span>Junior</span></div>
-    <a class="phone" href="tel:+84971882096">Hotline: <strong>0971 882 096</strong></a>
+    <div class="topbar-right">
+      <a class="student" href="phu-huynh/">Góc học viên</a>
+      <a class="phone" href="tel:+84971882096">Hotline: <strong>0971 882 096</strong></a>
+    </div>
   </div>
 </div>
 
@@ -541,6 +548,7 @@
     </div>
     <div>
       <b>Hotline / Zalo</b>: 0971 882 096
+      <br><a class="student-link" href="phu-huynh/">Góc học viên: tài liệu khoá học</a>
     </div>
   </div>
 </footer>
