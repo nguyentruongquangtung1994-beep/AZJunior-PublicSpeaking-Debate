@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
+<script>try { if (localStorage.getItem("azj_theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
 <title>Góc Học Viên AZJunior</title>
 <meta name="description" content="Trọn bộ tài liệu khoá AZJunior Public Speaking and Debate dành cho học viên và phụ huynh.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,11 +15,9 @@
     --red: #9C2B3C; --red-dark: #6E1F2B; --ink: #1B1F1B; --muted: #5C5C5C;
     --line: #E9E1E0; --tint: #F4E4E3; --tint-2: #FAF1F0; --bg: #FFFFFF; --panel: #FBF8F7; --card: #FFFFFF;
     --on-red: #FFFFFF; --shadow: 0 1px 2px rgba(27,31,27,.05), 0 6px 18px rgba(27,31,27,.06);
+    --hero-bg:#FAF1F0; --hero-ink:#1B1F1B; --hero-muted:#5C5C5C; --hero-accent:#9C2B3C; --hero-chip:rgba(156,43,60,.1); --art-s1:#EBCDD1; --art-s2:#DCA3AC; --art-s3:#B34A5B; --art-s4:#9C2B3C; --art-la:#6E1F2B; --art-sa:#8A5A60; --art-lb:#FFFFFF; --art-sb:#F6DDE0; --art-dot:#FFFFFF; --art-stroke:#9C2B3C;
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --ink:#F2ECEB; --muted:#B9AFAE; --line:#3A3233; --tint:#3A2629; --tint-2:#2A2022; --bg:#161213; --panel:#1E1819; --card:#201A1B; --red:#D8677A; --red-dark:#B04A5C; --shadow: 0 1px 2px rgba(0,0,0,.3); }
-  }
-  :root[data-theme="dark"] { --ink:#F2ECEB; --muted:#B9AFAE; --line:#3A3233; --tint:#3A2629; --tint-2:#2A2022; --bg:#161213; --panel:#1E1819; --card:#201A1B; --red:#D8677A; --red-dark:#B04A5C; --shadow: 0 1px 2px rgba(0,0,0,.3); }
+  :root[data-theme="dark"] { --ink:#F2ECEB; --muted:#B9AFAE; --line:#3A3233; --tint:#3A2629; --tint-2:#2A2022; --bg:#161213; --panel:#1E1819; --card:#201A1B; --red:#D8677A; --red-dark:#B04A5C; --shadow: 0 1px 2px rgba(0,0,0,.3); --hero-bg:#1B1F1B; --hero-ink:#FFFFFF; --hero-muted:#D9D2D1; --hero-accent:#F2B8C0; --hero-chip:rgba(242,184,192,.14); --art-s1:#4A2229; --art-s2:#6E1F2B; --art-s3:#86263A; --art-s4:#9C2B3C; --art-la:#F2B8C0; --art-sa:#BDB4B3; --art-lb:#FFFFFF; --art-sb:#F6DDE0; --art-dot:#2A2022; --art-stroke:#F2B8C0; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; scroll-padding-top: 72px; }
   body { font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
@@ -38,17 +37,26 @@
   .top nav a:hover { color: var(--red); }
 
   /* Hero */
-  .hero { background: #1B1F1B; color: #fff; padding: 56px 0 48px; overflow: hidden; }
+  .hero { background: var(--hero-bg); color: var(--hero-ink); border-bottom: 1px solid var(--line); padding: 56px 0 48px; overflow: hidden; }
   .hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 32px; align-items: center; }
-  .hero .eyebrow { color: #F2B8C0; }
+  .hero .eyebrow { color: var(--hero-accent); }
   .hero h1 { font-size: clamp(30px, 4.6vw, 46px); margin: 12px 0 14px; }
-  .hero p { color: #D9D2D1; font-size: 17px; max-width: 520px; }
+  .hero p { color: var(--hero-muted); font-size: 17px; max-width: 520px; }
   .stats { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: 10px 26px; margin-top: 28px; }
   .stat { display: flex; align-items: center; gap: 10px; }
-  .stat .ic { width: 36px; height: 36px; padding: 8px; border-radius: 50%; background: rgba(242,184,192,.14); color: #F2B8C0; }
+  .stat .ic { width: 36px; height: 36px; padding: 8px; border-radius: 50%; background: var(--hero-chip); color: var(--hero-accent); }
   .stat b { font-family: 'Fraunces', serif; font-size: 22px; display: block; line-height: 1; }
-  .stat span { font-size: 12.5px; color: #BDB4B3; }
+  .stat span { font-size: 12.5px; color: var(--hero-muted); }
   .hero-art svg { width: 100%; height: auto; display: block; }
+  .s1{fill:var(--art-s1)} .s2{fill:var(--art-s2)} .s3{fill:var(--art-s3)} .s4{fill:var(--art-s4)}
+  .la{fill:var(--art-la)} .sa{fill:var(--art-sa)} .lb{fill:var(--art-lb)} .sb{fill:var(--art-sb)}
+  .ring{fill:var(--art-dot); stroke:var(--art-stroke)} .glyph{stroke:var(--art-stroke)} .acc{fill:var(--hero-accent)} .trail{stroke:var(--art-stroke)}
+  .theme { margin-left: auto; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; display: grid; place-items: center; flex: none; }
+  .theme:hover { border-color: var(--red); color: var(--red); }
+  .theme .ic { width: 18px; height: 18px; }
+  .theme .sun { display: none; }
+  :root[data-theme="dark"] .theme .sun { display: inline-flex; }
+  :root[data-theme="dark"] .theme .moon { display: none; }
 
   section { padding: 60px 0; }
   .band { background: var(--panel); }
@@ -227,6 +235,7 @@
   <div class="wrap">
     <a class="brand" href="../"><b>AZ</b>Junior &nbsp;·&nbsp; Góc Học Viên</a>
     <nav><a href="#library">Tài liệu</a><a href="#hanh-trinh">Tổng kết</a><a href="#luyen-tai-nha">Luyện tại nhà</a></nav>
+    <button type="button" class="theme" id="theme" aria-label="Chuyển giao diện sáng/tối" title="Chuyển giao diện sáng/tối"><i class="ic moon" data-i="moon"></i><i class="ic sun" data-i="sun"></i></button>
   </div>
 </header>
 
@@ -246,33 +255,33 @@
     <div class="hero-art" aria-hidden="true">
       <svg viewBox="0 0 460 300" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g font-family="Be Vietnam Pro, sans-serif" font-size="13" font-weight="600" text-anchor="middle">
-          <rect x="20" y="230" width="96" height="50" rx="6" fill="#4A2229"/>
-          <rect x="124" y="190" width="96" height="90" rx="6" fill="#6E1F2B"/>
-          <rect x="228" y="150" width="96" height="130" rx="6" fill="#86263A"/>
-          <rect x="332" y="110" width="96" height="170" rx="6" fill="#9C2B3C"/>
-          <text x="68" y="262" fill="#F2B8C0">Giọng nói</text>
-          <text x="172" y="222" fill="#F2B8C0">Tư duy</text>
-          <text x="276" y="182" fill="#F2B8C0">Tranh biện</text>
-          <text x="380" y="142" fill="#FFFFFF">Thi đấu</text>
-          <text x="68" y="246" fill="#BDB4B3" font-size="11" font-weight="500">Buổi 1–4</text>
-          <text x="172" y="206" fill="#BDB4B3" font-size="11" font-weight="500">Buổi 5–8</text>
-          <text x="276" y="166" fill="#E8C9CD" font-size="11" font-weight="500">Buổi 9–12</text>
-          <text x="380" y="126" fill="#F6DDE0" font-size="11" font-weight="500">Buổi 13–16</text>
+          <rect class="s1" x="20" y="230" width="96" height="50" rx="6"/>
+          <rect class="s2" x="124" y="190" width="96" height="90" rx="6"/>
+          <rect class="s3" x="228" y="150" width="96" height="130" rx="6"/>
+          <rect class="s4" x="332" y="110" width="96" height="170" rx="6"/>
+          <text class="la" x="68" y="262">Giọng nói</text>
+          <text class="la" x="172" y="222">Tư duy</text>
+          <text class="lb" x="276" y="182">Tranh biện</text>
+          <text class="lb" x="380" y="142">Thi đấu</text>
+          <text class="sa" x="68" y="246" font-size="11" font-weight="500">Buổi 1–4</text>
+          <text class="sa" x="172" y="206" font-size="11" font-weight="500">Buổi 5–8</text>
+          <text class="sb" x="276" y="166" font-size="11" font-weight="500">Buổi 9–12</text>
+          <text class="sb" x="380" y="126" font-size="11" font-weight="500">Buổi 13–16</text>
         </g>
-        <g stroke="#F2B8C0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="68" cy="196" r="22" fill="#2A2022"/>
-          <path d="M68 184a4 4 0 0 0-4 4v8a4 4 0 0 0 8 0v-8a4 4 0 0 0-4-4Z M76 194v2a8 8 0 0 1-16 0v-2 M68 204v4"/>
-          <circle cx="172" cy="156" r="22" fill="#2A2022"/>
-          <path d="M176 160c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5a7 7 0 0 0-14 0c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5 M169 164h6 M170 168h4"/>
-          <circle cx="276" cy="116" r="22" fill="#2A2022"/>
-          <path d="M276 104v24 M266 108h20 M266 108l-4 9a4 4 0 0 0 8 0Z M286 108l-4 9a4 4 0 0 0 8 0Z M270 128h12"/>
+        <g stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle class="ring" cx="68" cy="196" r="22"/>
+          <path class="glyph" d="M68 184a4 4 0 0 0-4 4v8a4 4 0 0 0 8 0v-8a4 4 0 0 0-4-4Z M76 194v2a8 8 0 0 1-16 0v-2 M68 204v4"/>
+          <circle class="ring" cx="172" cy="156" r="22"/>
+          <path class="glyph" d="M176 160c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5a7 7 0 0 0-14 0c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5 M169 164h6 M170 168h4"/>
+          <circle class="ring" cx="276" cy="116" r="22"/>
+          <path class="glyph" d="M276 104v24 M266 108h20 M266 108l-4 9a4 4 0 0 0 8 0Z M286 108l-4 9a4 4 0 0 0 8 0Z M270 128h12"/>
         </g>
         <g stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="380" cy="64" r="30" fill="#9C2B3C"/>
           <path d="M372 50h16v10a8 8 0 0 1-16 0Z M372 54h-4a3.5 3.5 0 0 0 4 6 M388 54h4a3.5 3.5 0 0 1-4 6 M380 68v6 M374 78h12"/>
         </g>
-        <path d="M68 172 C 110 150, 130 150, 160 136 M184 132 C 220 110, 240 108, 262 98 M296 98 C 320 86, 335 80, 352 72" stroke="#F2B8C0" stroke-width="1.5" stroke-dasharray="4 5" opacity=".7"/>
-        <text x="380" y="22" fill="#F2B8C0" font-family="Be Vietnam Pro, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.2">TỐT NGHIỆP</text>
+        <path class="trail" d="M68 172 C 110 150, 130 150, 160 136 M184 132 C 220 110, 240 108, 262 98 M296 98 C 320 86, 335 80, 352 72" stroke-width="1.5" stroke-dasharray="4 5" opacity=".7"/>
+        <text class="acc" x="380" y="22" font-family="Be Vietnam Pro, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.2">TỐT NGHIỆP</text>
       </svg>
     </div>
   </div>
@@ -370,11 +379,18 @@ var ICONS = {
   repeat: '<path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/>',
   check: '<path d="M20 6 9 17l-5-5"/>',
   arrow: '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
-  chat: '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>'
+  chat: '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+  moon: '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.9 4.9 1.4 1.4"/><path d="m17.7 17.7 1.4 1.4"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.3 17.7-1.4 1.4"/><path d="m19.1 4.9-1.4 1.4"/>'
 };
 function icon(n) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' + (ICONS[n] || "") + '</svg>'; }
 function hydrate(root) { root.querySelectorAll("[data-i]").forEach(function (el) { el.innerHTML = icon(el.dataset.i); el.removeAttribute("data-i"); }); }
 hydrate(document);
+document.getElementById("theme").addEventListener("click", function () {
+  var dark = document.documentElement.dataset.theme !== "dark";
+  if (dark) document.documentElement.dataset.theme = "dark"; else delete document.documentElement.dataset.theme;
+  try { localStorage.setItem("azj_theme", dark ? "dark" : "light"); } catch (e) {}
+});
 
 var ORIENTATION = { n:0, title:"Buổi định hướng: Vì sao học nói trước đám đông và tranh biện", file:"AZJunior-L00-Orientation", goal:"Con biết mình đã học gì, vì sao, và kỹ năng này dùng vào đâu trong cuộc sống." };
 var PHASES = [
