@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<script>try { if (localStorage.getItem("azj_theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
+<script>try { if (localStorage.getItem("azj_lang") === "en") document.documentElement.lang = "en"; } catch (e) {}
+try { if (localStorage.getItem("azj_theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
 <title>Góc Học Viên AZJunior</title>
 <meta name="description" content="Trọn bộ tài liệu khoá AZJunior Public Speaking and Debate dành cho học viên và phụ huynh.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,7 +52,13 @@
   .s1{fill:var(--art-s1)} .s2{fill:var(--art-s2)} .s3{fill:var(--art-s3)} .s4{fill:var(--art-s4)}
   .la{fill:var(--art-la)} .sa{fill:var(--art-sa)} .lb{fill:var(--art-lb)} .sb{fill:var(--art-sb)}
   .ring{fill:var(--art-dot); stroke:var(--art-stroke)} .glyph{stroke:var(--art-stroke)} .acc{fill:var(--hero-accent)} .trail{stroke:var(--art-stroke)}
-  .theme { margin-left: auto; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; display: grid; place-items: center; flex: none; }
+  :root[lang="en"] .l-vi, :root:not([lang="en"]) .l-en { display: none !important; }
+  .lang { font: inherit; font-size: 12.5px; font-weight: 700; letter-spacing: .5px; height: 38px; min-width: 46px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; flex: none; }
+  .lang:hover { border-color: var(--red); color: var(--red); }
+  .top nav { margin-left: auto; }
+  .hdr-tools { display: flex; gap: 8px; margin-left: 16px; flex: none; }
+  body:not(.unlocked) .hdr-tools { margin-left: auto; }
+  .theme { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; display: grid; place-items: center; flex: none; }
   .theme:hover { border-color: var(--red); color: var(--red); }
   .theme .ic { width: 18px; height: 18px; }
   .theme .sun { display: none; }
@@ -205,6 +212,7 @@
   }
   @media (max-width: 720px) {
     .top nav { display: none !important; }
+    .hdr-tools { margin-left: auto !important; }
     .stats { grid-template-columns: repeat(2, auto); }
     .timeline { grid-template-columns: 1fr 1fr; gap: 26px 14px; }
     .timeline::before { display: none; }
@@ -233,23 +241,24 @@
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="../"><b>AZ</b>Junior &nbsp;·&nbsp; Góc Học Viên</a>
-    <nav><a href="#library">Tài liệu</a><a href="#hanh-trinh">Tổng kết</a><a href="#luyen-tai-nha">Luyện tại nhà</a></nav>
-    <button type="button" class="theme" id="theme" aria-label="Chuyển giao diện sáng/tối" title="Chuyển giao diện sáng/tối"><i class="ic moon" data-i="moon"></i><i class="ic sun" data-i="sun"></i></button>
+    <a class="brand" href="../"><b>AZ</b>Junior &nbsp;·&nbsp; <span class="l-vi">Góc Học Viên</span><span class="l-en">Student Corner</span></a>
+    <nav><a href="#library"><span class="l-vi">Tài liệu</span><span class="l-en">Materials</span></a><a href="#hanh-trinh"><span class="l-vi">Tổng kết</span><span class="l-en">Summary</span></a><a href="#luyen-tai-nha"><span class="l-vi">Luyện tại nhà</span><span class="l-en">Home practice</span></a></nav>
+    <div class="hdr-tools"><button type="button" class="lang" id="lang">EN</button>
+    <button type="button" class="theme" id="theme" aria-label="Chuyển giao diện sáng/tối" title="Chuyển giao diện sáng/tối"><i class="ic moon" data-i="moon"></i><i class="ic sun" data-i="sun"></i></button></div>
   </div>
 </header>
 
 <div class="hero" id="top">
   <div class="wrap">
     <div>
-      <span class="eyebrow">AZJunior Public Speaking and Debate · Khoá 1 – 2026</span>
-      <h1>Chúc mừng con đã hoàn thành 16 buổi học</h1>
-      <p>Trọn bộ tài liệu của khoá, bảng tổng kết và kế hoạch luyện tại nhà để con giữ vững kỹ năng.</p>
+      <span class="eyebrow">AZJunior Public Speaking and Debate · <span class="l-vi">Khoá 1 – 2026</span><span class="l-en">Course 1 – 2026</span></span>
+      <h1><span class="l-vi">Chúc mừng con đã hoàn thành 16 buổi học</span><span class="l-en">Congratulations on completing all 16 sessions</span></h1>
+      <p><span class="l-vi">Trọn bộ tài liệu của khoá, bảng tổng kết và kế hoạch luyện tại nhà để con giữ vững kỹ năng.</span><span class="l-en">The full set of course materials, a course summary and a home practice plan to keep your child’s skills sharp.</span></p>
       <div class="stats">
-        <div class="stat"><i class="ic" data-i="book"></i><div><b>17</b><span>bộ tài liệu</span></div></div>
-        <div class="stat"><i class="ic" data-i="flag"></i><div><b>4</b><span>giai đoạn</span></div></div>
-        <div class="stat"><i class="ic" data-i="trophy"></i><div><b>4</b><span>mốc trình diễn</span></div></div>
-        <div class="stat"><i class="ic" data-i="home"></i><div><b>4</b><span>tuần luyện</span></div></div>
+        <div class="stat"><i class="ic" data-i="book"></i><div><b>17</b><span><span class="l-vi">bộ tài liệu</span><span class="l-en">handouts</span></span></div></div>
+        <div class="stat"><i class="ic" data-i="flag"></i><div><b>4</b><span><span class="l-vi">giai đoạn</span><span class="l-en">phases</span></span></div></div>
+        <div class="stat"><i class="ic" data-i="trophy"></i><div><b>4</b><span><span class="l-vi">mốc trình diễn</span><span class="l-en">showcases</span></span></div></div>
+        <div class="stat"><i class="ic" data-i="home"></i><div><b>4</b><span><span class="l-vi">tuần luyện</span><span class="l-en">practice weeks</span></span></div></div>
       </div>
     </div>
     <div class="hero-art" aria-hidden="true">
@@ -259,14 +268,14 @@
           <rect class="s2" x="124" y="190" width="96" height="90" rx="6"/>
           <rect class="s3" x="228" y="150" width="96" height="130" rx="6"/>
           <rect class="s4" x="332" y="110" width="96" height="170" rx="6"/>
-          <text class="la" x="68" y="262">Giọng nói</text>
-          <text class="la" x="172" y="222">Tư duy</text>
-          <text class="lb" x="276" y="182">Tranh biện</text>
-          <text class="lb" x="380" y="142">Thi đấu</text>
-          <text class="sa" x="68" y="246" font-size="11" font-weight="500">Buổi 1–4</text>
-          <text class="sa" x="172" y="206" font-size="11" font-weight="500">Buổi 5–8</text>
-          <text class="sb" x="276" y="166" font-size="11" font-weight="500">Buổi 9–12</text>
-          <text class="sb" x="380" y="126" font-size="11" font-weight="500">Buổi 13–16</text>
+          <text class="l-vi la" x="68" y="262">Giọng nói</text><text class="l-en la" x="68" y="262">Voice</text>
+          <text class="l-vi la" x="172" y="222">Tư duy</text><text class="l-en la" x="172" y="222">Thinking</text>
+          <text class="l-vi lb" x="276" y="182">Tranh biện</text><text class="l-en lb" x="276" y="182">Debate</text>
+          <text class="l-vi lb" x="380" y="142">Thi đấu</text><text class="l-en lb" x="380" y="142">Compete</text>
+          <text class="l-vi sa" x="68" y="246" font-size="11" font-weight="500">Buổi 1–4</text><text class="l-en sa" x="68" y="246" font-size="11" font-weight="500">Sessions 1–4</text>
+          <text class="l-vi sa" x="172" y="206" font-size="11" font-weight="500">Buổi 5–8</text><text class="l-en sa" x="172" y="206" font-size="11" font-weight="500">Sessions 5–8</text>
+          <text class="l-vi sb" x="276" y="166" font-size="11" font-weight="500">Buổi 9–12</text><text class="l-en sb" x="276" y="166" font-size="11" font-weight="500">Sessions 9–12</text>
+          <text class="l-vi sb" x="380" y="126" font-size="11" font-weight="500">Buổi 13–16</text><text class="l-en sb" x="380" y="126" font-size="11" font-weight="500">Sessions 13–16</text>
         </g>
         <g stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
           <circle class="ring" cx="68" cy="196" r="22"/>
@@ -281,7 +290,7 @@
           <path d="M372 50h16v10a8 8 0 0 1-16 0Z M372 54h-4a3.5 3.5 0 0 0 4 6 M388 54h4a3.5 3.5 0 0 1-4 6 M380 68v6 M374 78h12"/>
         </g>
         <path class="trail" d="M68 172 C 110 150, 130 150, 160 136 M184 132 C 220 110, 240 108, 262 98 M296 98 C 320 86, 335 80, 352 72" stroke-width="1.5" stroke-dasharray="4 5" opacity=".7"/>
-        <text class="acc" x="380" y="22" font-family="Be Vietnam Pro, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.2">TỐT NGHIỆP</text>
+        <text class="l-vi acc" x="380" y="22" font-family="Be Vietnam Pro, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.2">TỐT NGHIỆP</text><text class="l-en acc" x="380" y="22" font-family="Be Vietnam Pro, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.2">GRADUATION</text>
       </svg>
     </div>
   </div>
@@ -290,14 +299,14 @@
 <section id="gate-section" class="locked-only">
   <div class="wrap gate-wrap">
     <div>
-      <span class="eyebrow">Truy cập</span>
-      <h2>Nhập mã lớp để mở tài liệu</h2>
-      <p class="lede">Mã lớp do AZJunior gửi qua Zalo cho phụ huynh và học viên của khoá. Tài liệu được mã hoá, chỉ mở được khi nhập đúng mã.</p>
+      <span class="eyebrow"><span class="l-vi">Truy cập</span><span class="l-en">Access</span></span>
+      <h2><span class="l-vi">Nhập mã lớp để mở tài liệu</span><span class="l-en">Enter your class code to open the materials</span></h2>
+      <p class="lede"><span class="l-vi">Mã lớp do AZJunior gửi qua Zalo cho phụ huynh và học viên của khoá. Tài liệu được mã hoá, chỉ mở được khi nhập đúng mã.</span><span class="l-en">AZJunior sends the class code to parents and students via Zalo. The materials are encrypted and open only with the correct code.</span></p>
       <form class="gate" id="gate" autocomplete="off">
-        <label for="code">Mã lớp</label>
+        <label for="code"><span class="l-vi">Mã lớp</span><span class="l-en">Class code</span></label>
         <div class="row">
           <input id="code" type="password" autocapitalize="characters" spellcheck="false" placeholder="Nhập mã lớp" aria-describedby="msg">
-          <button class="btn" id="go" type="submit">Mở tài liệu</button>
+          <button class="btn" id="go" type="submit"><span class="l-vi">Mở tài liệu</span><span class="l-en">Open materials</span></button>
         </div>
         <div class="msg" id="msg" role="status"></div>
       </form>
@@ -313,9 +322,9 @@
 
 <section id="library" class="unlocked-only">
   <div class="wrap">
-    <span class="eyebrow">Thư viện tài liệu</span>
-    <h2>Trọn bộ 16 buổi, 4 giai đoạn</h2>
-    <p class="lede">Chọn một giai đoạn để xem tài liệu từng buổi. Mỗi bộ gồm bài học, ví dụ mẫu, bài luyện và phiếu tự đánh giá.</p>
+    <span class="eyebrow"><span class="l-vi">Thư viện tài liệu</span><span class="l-en">Library</span></span>
+    <h2><span class="l-vi">Trọn bộ 16 buổi, 4 giai đoạn</span><span class="l-en">All 16 sessions in 4 phases</span></h2>
+    <p class="lede"><span class="l-vi">Chọn một giai đoạn để xem tài liệu từng buổi. Mỗi bộ gồm bài học, ví dụ mẫu, bài luyện và phiếu tự đánh giá.</span><span class="l-en">Choose a phase to see each session’s handout. Every handout includes the lesson, model examples, practice drills and a self-check.</span></p>
     <div id="phases"></div>
   </div>
 </section>
@@ -324,20 +333,20 @@
 
 <section id="hoi-dap">
   <div class="wrap faq">
-    <span class="eyebrow">Hỏi đáp</span>
-    <h2>Câu hỏi thường gặp</h2>
-    <details><summary>Tôi có tải hoặc in tài liệu được không?</summary><p>Tài liệu chỉ xem trực tuyến trên trang này để bảo vệ giáo trình của AZJunior. Phụ huynh và con có thể quay lại xem bất cứ lúc nào bằng mã lớp.</p></details>
-    <details><summary>Mã lớp dùng được bao lâu?</summary><p>Mã dùng lâu dài, không hết hạn. Vui lòng không chia sẻ mã ra ngoài lớp.</p></details>
-    <details><summary>Tài liệu bằng tiếng Anh, con có theo được không?</summary><p>Tài liệu viết bằng tiếng Anh đơn giản, có định nghĩa thuật ngữ dễ hiểu. Phụ huynh không cần giỏi tiếng Anh; chỉ cần nghe con nói và khen một điểm cụ thể.</p></details>
-    <details><summary>Sau khoá học, con nên luyện bao lâu mỗi tuần?</summary><p>Khoảng 10 phút, ba lần mỗi tuần theo kế hoạch 4 tuần trong phần tổng kết. Ngắn nhưng đều đặn tốt hơn luyện dài rồi bỏ.</p></details>
-    <details><summary>Tôi cần hỗ trợ thêm thì liên hệ ở đâu?</summary><p>Liên hệ AZJunior qua Zalo hoặc hotline 0971 882 096 ở cuối trang.</p></details>
+    <span class="eyebrow"><span class="l-vi">Hỏi đáp</span><span class="l-en">FAQ</span></span>
+    <h2><span class="l-vi">Câu hỏi thường gặp</span><span class="l-en">Frequently asked questions</span></h2>
+    <details><summary><span class="l-vi">Tôi có tải hoặc in tài liệu được không?</span><span class="l-en">Can I download or print the materials?</span></summary><p><span class="l-vi">Tài liệu chỉ xem trực tuyến trên trang này để bảo vệ giáo trình của AZJunior. Phụ huynh và con có thể quay lại xem bất cứ lúc nào bằng mã lớp.</span><span class="l-en">The materials can be viewed online on this page only, to protect the AZJunior curriculum. You and your child can come back at any time with the class code.</span></p></details>
+    <details><summary><span class="l-vi">Mã lớp dùng được bao lâu?</span><span class="l-en">How long does the class code work?</span></summary><p><span class="l-vi">Mã dùng lâu dài, không hết hạn. Vui lòng không chia sẻ mã ra ngoài lớp.</span><span class="l-en">The code does not expire. Please do not share it outside the class.</span></p></details>
+    <details><summary><span class="l-vi">Tài liệu bằng tiếng Anh, con có theo được không?</span><span class="l-en">The materials are in English. Can my child follow them?</span></summary><p><span class="l-vi">Tài liệu viết bằng tiếng Anh đơn giản, có định nghĩa thuật ngữ dễ hiểu. Phụ huynh không cần giỏi tiếng Anh; chỉ cần nghe con nói và khen một điểm cụ thể.</span><span class="l-en">They are written in simple English with plain definitions of key terms. Parents do not need strong English: just listen to your child speak and praise one specific thing.</span></p></details>
+    <details><summary><span class="l-vi">Sau khoá học, con nên luyện bao lâu mỗi tuần?</span><span class="l-en">How much should my child practise after the course?</span></summary><p><span class="l-vi">Khoảng 10 phút, ba lần mỗi tuần theo kế hoạch 4 tuần trong phần tổng kết. Ngắn nhưng đều đặn tốt hơn luyện dài rồi bỏ.</span><span class="l-en">About 10 minutes, three times a week, following the 4-week plan in the summary. Short and regular beats long and then giving up.</span></p></details>
+    <details><summary><span class="l-vi">Tôi cần hỗ trợ thêm thì liên hệ ở đâu?</span><span class="l-en">Who can I contact for help?</span></summary><p><span class="l-vi">Liên hệ AZJunior qua Zalo hoặc hotline 0971 882 096 ở cuối trang.</span><span class="l-en">Contact AZJunior via Zalo or the hotline 0971 882 096 at the bottom of the page.</span></p></details>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <div><strong>AZJunior Public Speaking and Debate</strong><br>23 Thái Nguyên · 64 Nguyễn Đình Chiểu, Nha Trang</div>
-    <div>Zalo / Hotline: <a href="https://zalo.me/0971882096">0971 882 096</a><br>Tài liệu chỉ dành cho học viên và phụ huynh của lớp.</div>
+    <div>Zalo / Hotline: <a href="https://zalo.me/0971882096">0971 882 096</a><br><span class="l-vi">Tài liệu chỉ dành cho học viên và phụ huynh của lớp.</span><span class="l-en">For students and parents of this class only.</span></div>
   </div>
 </footer>
 
@@ -392,33 +401,60 @@ document.getElementById("theme").addEventListener("click", function () {
   try { localStorage.setItem("azj_theme", dark ? "dark" : "light"); } catch (e) {}
 });
 
-var ORIENTATION = { n:0, title:"Buổi định hướng: Vì sao học nói trước đám đông và tranh biện", file:"AZJunior-L00-Orientation", goal:"Con biết mình đã học gì, vì sao, và kỹ năng này dùng vào đâu trong cuộc sống." };
+var ORIENTATION = { n:0, title:"Buổi định hướng: Vì sao học nói trước đám đông và tranh biện", file:"AZJunior-L00-Orientation", goal:"Con biết mình đã học gì, vì sao, và kỹ năng này dùng vào đâu trong cuộc sống.", en:{ title:"Orientation: Why Public Speaking & Debate", goal:"Your child knows what they learned, why, and where these skills are used in everyday life." } };
 var PHASES = [
-  { name: "Giọng nói và hiện diện", range: "Giai đoạn 1 · Buổi 1–4", icon: "mic", items: [
-    { n:1, title:"Tự tin trên sân khấu và kỹ năng giọng nói", file:"AZJunior-L01-Stage-Confidence-Vocal-Skills", goal:"Âm lượng, tốc độ, ngắt nghỉ và cách lấy lại bình tĩnh.", home:"Nghe con đọc một câu ba lần với ba cảm xúc, chỉ khen điều con làm tốt." },
-    { n:2, title:"Ngôn ngữ cơ thể và cấu trúc OBC", file:"AZJunior-L02-Body-Language-OBC-Structure", goal:"Đứng vững, ánh mắt, cử chỉ; bài nói có mở, thân, kết.", home:"Cho con nói 1 phút về một chủ đề quen thuộc theo ba phần mở, thân, kết." },
-    { n:3, title:"Kể chuyện bằng năm giác quan", file:"AZJunior-L03-Descriptive-Speaking-Storytelling", goal:"Kể chuyện có vấn đề, khó khăn và bài học.", home:"Hỏi con: khi kể chuyện, con muốn người nghe nhìn, nghe, ngửi thấy điều gì?" },
-    { n:4, title:"Thuyết trình thông tin và Showcase 1", file:"AZJunior-L04-Informative-Speaking-Showcase-1", goal:"Giải thích rõ một chủ đề cho người chưa biết.", home:"Nhờ con giải thích một điều con biết cho người lớn tuổi trong nhà, xem họ có hiểu không.", star:true }
+  { en: { name: "Voice & Presence", range: "Phase 1 · Sessions 1–4" }, name: "Giọng nói và hiện diện", range: "Giai đoạn 1 · Buổi 1–4", icon: "mic", items: [
+    { n:1, title:"Tự tin trên sân khấu và kỹ năng giọng nói", file:"AZJunior-L01-Stage-Confidence-Vocal-Skills", goal:"Âm lượng, tốc độ, ngắt nghỉ và cách lấy lại bình tĩnh.", home:"Nghe con đọc một câu ba lần với ba cảm xúc, chỉ khen điều con làm tốt.", en:{ title:"Stage Confidence & Vocal Skills", goal:"Volume, pace, pauses and how to calm down before speaking.", home:"Listen to your child read one sentence three times with three different feelings; praise only what went well." } },
+    { n:2, title:"Ngôn ngữ cơ thể và cấu trúc OBC", file:"AZJunior-L02-Body-Language-OBC-Structure", goal:"Đứng vững, ánh mắt, cử chỉ; bài nói có mở, thân, kết.", home:"Cho con nói 1 phút về một chủ đề quen thuộc theo ba phần mở, thân, kết.", en:{ title:"Body Language & OBC Structure", goal:"Standing tall, eye contact, gestures; a talk with an opening, body and closing.", home:"Ask your child to talk for 1 minute on a familiar topic using opening, body and closing." } },
+    { n:3, title:"Kể chuyện bằng năm giác quan", file:"AZJunior-L03-Descriptive-Speaking-Storytelling", goal:"Kể chuyện có vấn đề, khó khăn và bài học.", home:"Hỏi con: khi kể chuyện, con muốn người nghe nhìn, nghe, ngửi thấy điều gì?", en:{ title:"Descriptive Speaking & Storytelling", goal:"Telling a story with a problem, a struggle and a lesson.", home:"Ask: when you tell a story, what do you want your listener to see, hear and smell?" } },
+    { n:4, title:"Thuyết trình thông tin và Showcase 1", file:"AZJunior-L04-Informative-Speaking-Showcase-1", goal:"Giải thích rõ một chủ đề cho người chưa biết.", home:"Nhờ con giải thích một điều con biết cho người lớn tuổi trong nhà, xem họ có hiểu không.", en:{ title:"Informative Speaking & Showcase 1", goal:"Explaining a topic clearly to someone who knows nothing about it.", home:"Ask your child to explain something they know to an older family member and check that they understood." }, star:true }
   ]},
-  { name: "Tư duy và công thức AREI", range: "Giai đoạn 2 · Buổi 5–8", icon: "bulb", items: [
-    { n:5, title:"Sự kiện và ý kiến, công thức AREI", file:"AZJunior-L05-Fact-vs-Opinion-the-AREI-Formula", goal:"Phân biệt sự kiện với ý kiến; lập luận đủ 4 phần.", home:"Đọc một câu tin ngắn cùng con và hỏi: đây là sự kiện hay ý kiến, vì sao?" },
-    { n:6, title:"Tìm bằng chứng và cân nhắc tác động", file:"AZJunior-L06-Finding-Evidence-Impact-Weighing", goal:"Chọn bằng chứng đáng tin, so sánh tầm quan trọng.", home:"Hỏi con: nguồn này đến từ đâu, vì sao ta nên tin?" },
-    { n:7, title:"Vai trò Leader và giải quyết vấn đề", file:"AZJunior-L07-Leader-Role-Problem-Solution-Thinking", goal:"Mở đầu cho đội, tìm nguyên nhân gốc.", home:"Cùng con chọn một vấn đề nhỏ trong nhà và tìm nguyên nhân gốc, chưa vội tìm giải pháp." },
-    { n:8, title:"Lập luận theo đội và Showcase 2", file:"AZJunior-L08-Team-Case-Building-Showcase-2", goal:"Ba người, ba lập luận không trùng ý.", home:"Hỏi con vai trò của mình trong đội và điều đội đã làm tốt.", star:true }
+  { en: { name: "Thinking & the AREI Formula", range: "Phase 2 · Sessions 5–8" }, name: "Tư duy và công thức AREI", range: "Giai đoạn 2 · Buổi 5–8", icon: "bulb", items: [
+    { n:5, title:"Sự kiện và ý kiến, công thức AREI", file:"AZJunior-L05-Fact-vs-Opinion-the-AREI-Formula", goal:"Phân biệt sự kiện với ý kiến; lập luận đủ 4 phần.", home:"Đọc một câu tin ngắn cùng con và hỏi: đây là sự kiện hay ý kiến, vì sao?", en:{ title:"Fact vs. Opinion & the AREI Formula", goal:"Telling facts from opinions; building an argument with all 4 parts.", home:"Read a short news line together and ask: is this a fact or an opinion, and why?" } },
+    { n:6, title:"Tìm bằng chứng và cân nhắc tác động", file:"AZJunior-L06-Finding-Evidence-Impact-Weighing", goal:"Chọn bằng chứng đáng tin, so sánh tầm quan trọng.", home:"Hỏi con: nguồn này đến từ đâu, vì sao ta nên tin?", en:{ title:"Finding Evidence & Impact Weighing", goal:"Choosing trustworthy evidence and comparing what matters most.", home:"Ask: where does this information come from, and why should we trust it?" } },
+    { n:7, title:"Vai trò Leader và giải quyết vấn đề", file:"AZJunior-L07-Leader-Role-Problem-Solution-Thinking", goal:"Mở đầu cho đội, tìm nguyên nhân gốc.", home:"Cùng con chọn một vấn đề nhỏ trong nhà và tìm nguyên nhân gốc, chưa vội tìm giải pháp.", en:{ title:"Leader Role & Problem-Solution Thinking", goal:"Opening for the team and finding the root cause.", home:"Pick a small problem at home together and look for the root cause before any solution." } },
+    { n:8, title:"Lập luận theo đội và Showcase 2", file:"AZJunior-L08-Team-Case-Building-Showcase-2", goal:"Ba người, ba lập luận không trùng ý.", home:"Hỏi con vai trò của mình trong đội và điều đội đã làm tốt.", en:{ title:"Team Case Building & Showcase 2", goal:"Three speakers, three arguments that do not overlap.", home:"Ask your child about their role in the team and what the team did well." }, star:true }
   ]},
-  { name: "Cơ chế tranh biện", range: "Giai đoạn 3 · Buổi 9–12", icon: "scale", items: [
-    { n:9, title:"Thể thức 3-5-2 và phản biện cơ bản", file:"AZJunior-L09-3-5-2-Debate-Format-Rebuttal-101", goal:"Hiểu thể thức thi đấu; phản biện lịch sự theo SPAR.", home:"Chơi trò đổi vai: con nêu ý kiến, phụ huynh phản biện nhẹ nhàng." },
-    { n:10, title:"Câu hỏi POI và lắng nghe chủ động", file:"AZJunior-L10-POI-Mastery-Active-Listening", goal:"Hỏi ngắn, đúng lúc; ghi chép ý chính khi nghe.", home:"Cho con nghe một đoạn ngắn và nhờ con nêu lại ý chính bằng một câu." },
-    { n:11, title:"Điểm xung đột và phần kết của Leader", file:"AZJunior-L11-Point-of-Clash-Leader-Closing", goal:"Tìm chỗ hai bên bất đồng; tổng kết 4 bước.", home:"Hỏi con: hai bên thật sự bất đồng ở điểm nào?" },
-    { n:12, title:"Tranh luận thử và xem lại video", file:"AZJunior-L12-Mock-Battle-Video-Debrief", goal:"Thi đấu thử, học từ chính phần trình bày của mình.", home:"Nếu con đồng ý, xem lại clip cùng con và tìm một điểm tốt, một điểm cải thiện.", star:true }
+  { en: { name: "Debate Mechanics", range: "Phase 3 · Sessions 9–12" }, name: "Cơ chế tranh biện", range: "Giai đoạn 3 · Buổi 9–12", icon: "scale", items: [
+    { n:9, title:"Thể thức 3-5-2 và phản biện cơ bản", file:"AZJunior-L09-3-5-2-Debate-Format-Rebuttal-101", goal:"Hiểu thể thức thi đấu; phản biện lịch sự theo SPAR.", home:"Chơi trò đổi vai: con nêu ý kiến, phụ huynh phản biện nhẹ nhàng.", en:{ title:"3-5-2 Debate Format & Rebuttal 101", goal:"The competition format; polite rebuttal with SPAR.", home:"Swap roles: your child gives an opinion and you gently argue back." } },
+    { n:10, title:"Câu hỏi POI và lắng nghe chủ động", file:"AZJunior-L10-POI-Mastery-Active-Listening", goal:"Hỏi ngắn, đúng lúc; ghi chép ý chính khi nghe.", home:"Cho con nghe một đoạn ngắn và nhờ con nêu lại ý chính bằng một câu.", en:{ title:"POI Mastery & Active Listening", goal:"Short, well-timed questions; noting the key points while listening.", home:"Let your child listen to a short clip and sum up the main idea in one sentence." } },
+    { n:11, title:"Điểm xung đột và phần kết của Leader", file:"AZJunior-L11-Point-of-Clash-Leader-Closing", goal:"Tìm chỗ hai bên bất đồng; tổng kết 4 bước.", home:"Hỏi con: hai bên thật sự bất đồng ở điểm nào?", en:{ title:"Point of Clash & Leader Closing", goal:"Finding where the two sides really disagree; a 4-step closing.", home:"Ask: where do the two sides really disagree?" } },
+    { n:12, title:"Tranh luận thử và xem lại video", file:"AZJunior-L12-Mock-Battle-Video-Debrief", goal:"Thi đấu thử, học từ chính phần trình bày của mình.", home:"Nếu con đồng ý, xem lại clip cùng con và tìm một điểm tốt, một điểm cải thiện.", en:{ title:"Mock Battle & Video Debrief", goal:"A practice debate and learning from your own recording.", home:"If your child agrees, watch the clip together and find one strength and one thing to improve." }, star:true }
   ]},
-  { name: "Chiến lược và thi đấu", range: "Giai đoạn 4 · Buổi 13–16", icon: "trophy", items: [
-    { n:13, title:"Thuyết phục nâng cao và chiến lược đội", file:"AZJunior-L13-Advanced-Persuasion-Team-Strategy", goal:"Công cụ tu từ, chia góc nhìn trong đội.", home:"Tìm cùng con một bài phát biểu ngắn và chỉ ra chỗ người nói thuyết phục nhất." },
-    { n:14, title:"Chuẩn bị tức thì và đối đáp", file:"AZJunior-L14-Impromptu-Prep-Crossfire", goal:"Chuẩn bị trong 30 phút, bình tĩnh khi bị hỏi khó.", home:"Đưa con một chủ đề bất ngờ, cho 2 phút chuẩn bị rồi 1 phút nói." },
-    { n:15, title:"Ngày thi đấu 1, vòng bảng", file:"AZJunior-L15-Tournament-Day-1-Group-Rounds", goal:"Thi đấu vòng bảng với toàn bộ kỹ năng đã học.", home:"Cùng con ôn lại phiếu tự đánh giá và chọn một điểm muốn làm tốt hơn lần sau.", star:true },
-    { n:16, title:"Chung kết và tốt nghiệp", file:"AZJunior-L16-Grand-Final-Graduation", goal:"Chung kết trước gia đình, nhìn lại hành trình.", home:"Cùng con xem lại tiến bộ từ buổi 1 đến buổi 16 và đặt mục tiêu tiếp theo.", star:true }
+  { en: { name: "Strategy & Competition", range: "Phase 4 · Sessions 13–16" }, name: "Chiến lược và thi đấu", range: "Giai đoạn 4 · Buổi 13–16", icon: "trophy", items: [
+    { n:13, title:"Thuyết phục nâng cao và chiến lược đội", file:"AZJunior-L13-Advanced-Persuasion-Team-Strategy", goal:"Công cụ tu từ, chia góc nhìn trong đội.", home:"Tìm cùng con một bài phát biểu ngắn và chỉ ra chỗ người nói thuyết phục nhất.", en:{ title:"Advanced Persuasion & Team Strategy", goal:"Rhetorical tools and splitting angles within the team.", home:"Find a short speech together and point out where the speaker is most convincing." } },
+    { n:14, title:"Chuẩn bị tức thì và đối đáp", file:"AZJunior-L14-Impromptu-Prep-Crossfire", goal:"Chuẩn bị trong 30 phút, bình tĩnh khi bị hỏi khó.", home:"Đưa con một chủ đề bất ngờ, cho 2 phút chuẩn bị rồi 1 phút nói.", en:{ title:"Impromptu Prep & Crossfire", goal:"Preparing in 30 minutes and staying calm under tough questions.", home:"Give your child a surprise topic: 2 minutes to prepare, then 1 minute to speak." } },
+    { n:15, title:"Ngày thi đấu 1, vòng bảng", file:"AZJunior-L15-Tournament-Day-1-Group-Rounds", goal:"Thi đấu vòng bảng với toàn bộ kỹ năng đã học.", home:"Cùng con ôn lại phiếu tự đánh giá và chọn một điểm muốn làm tốt hơn lần sau.", en:{ title:"Tournament Day 1: Group Rounds", goal:"Group-stage debates using every skill learned so far.", home:"Review the self-check sheet together and pick one thing to do better next time." }, star:true },
+    { n:16, title:"Chung kết và tốt nghiệp", file:"AZJunior-L16-Grand-Final-Graduation", goal:"Chung kết trước gia đình, nhìn lại hành trình.", home:"Cùng con xem lại tiến bộ từ buổi 1 đến buổi 16 và đặt mục tiêu tiếp theo.", en:{ title:"Grand Final & Graduation", goal:"The final in front of families and a look back at the journey.", home:"Look back at progress from session 1 to 16 together and set the next goal." }, star:true }
   ]}
 ];
+
+/* Ngôn ngữ: chữ tĩnh chuyển bằng CSS (.l-vi/.l-en), chữ sinh bằng JS dùng T() và L() */
+function isEN() { return document.documentElement.lang === "en"; }
+function T(vi, en) { return isEN() ? en : vi; }
+function L(o, k) { return isEN() && o.en && o.en[k] ? o.en[k] : o[k]; }
+function applyLang() {
+  var en = isEN(), th = document.getElementById("theme");
+  document.getElementById("lang").textContent = en ? "VI" : "EN";
+  document.getElementById("lang").setAttribute("aria-label", en ? "Chuyển sang tiếng Việt" : "Switch to English");
+  document.getElementById("code").placeholder = T("Nhập mã lớp", "Enter class code");
+  th.title = T("Chuyển giao diện sáng/tối", "Switch light/dark mode"); th.setAttribute("aria-label", th.title);
+  document.getElementById("pclose").setAttribute("aria-label", T("Đóng", "Close"));
+  document.getElementById("vclose").textContent = T("Đóng", "Close");
+  document.getElementById("zout").setAttribute("aria-label", T("Thu nhỏ", "Zoom out"));
+  document.getElementById("zin").setAttribute("aria-label", T("Phóng to", "Zoom in"));
+  document.title = T("Góc Học Viên AZJunior", "AZJunior Student Corner");
+  document.getElementById("msg").textContent = "";
+}
+document.getElementById("lang").addEventListener("click", function () {
+  var en = !isEN();
+  document.documentElement.lang = en ? "en" : "vi";
+  try { localStorage.setItem("azj_lang", en ? "en" : "vi"); } catch (e) {}
+  applyLang();
+  if (KEY) render();
+  if (pop.classList.contains("open") && lastPop) lastPop();
+  if (viewer.classList.contains("open") && openFile) setViewerTitle(ALL[openFile]);
+});
 
 var DATA = "data/", KEY = null, ALL = {};
 function b64(u8) { var s = ""; for (var i = 0; i < u8.length; i++) s += String.fromCharCode(u8[i]); return btoa(s); }
@@ -445,25 +481,25 @@ async function useRaw(raw) {
   return key;
 }
 
-function viewBtn(it) { return '<button type="button" class="view" data-file="' + it.file + '"><i class="ic">' + icon("eye") + '</i>Xem tài liệu</button>'; }
+function viewBtn(it) { return '<button type="button" class="view" data-file="' + it.file + '"><i class="ic">' + icon("eye") + '</i>' + T("Xem tài liệu", "View handout") + '</button>'; }
 function card(it) {
   ALL[it.file] = it;
-  return '<div class="card"><div class="head"><span class="num">Buổi ' + it.n + '</span>' + (it.star ? '<span class="star"><i class="ic">' + icon("star") + '</i>Trình diễn</span>' : '') + '</div>' +
-    '<h4>' + it.title + '</h4><div class="goal">' + it.goal + '</div>' +
-    '<details><summary><i class="ic">' + icon("home") + '</i>Gợi ý ở nhà, 5 phút</summary><p>' + it.home + '</p></details>' + viewBtn(it) + '</div>';
+  return '<div class="card"><div class="head"><span class="num">' + T("Buổi ", "Session ") + it.n + '</span>' + (it.star ? '<span class="star"><i class="ic">' + icon("star") + '</i>' + T("Trình diễn", "Showcase") + '</span>' : '') + '</div>' +
+    '<h4>' + L(it, "title") + '</h4><div class="goal">' + L(it, "goal") + '</div>' +
+    '<details><summary><i class="ic">' + icon("home") + '</i>' + T("Gợi ý ở nhà, 5 phút", "At home, 5 minutes") + '</summary><p>' + L(it, "home") + '</p></details>' + viewBtn(it) + '</div>';
 }
 function render() {
   ALL[ORIENTATION.file] = ORIENTATION;
-  var html = '<div class="card intro"><div class="badge"><i class="ic">' + icon("compass") + '</i></div><div class="txt"><h4>' + ORIENTATION.title + '</h4><div class="goal">' + ORIENTATION.goal + '</div></div>' + viewBtn(ORIENTATION) + '</div><div class="shelf">';
+  var html = '<div class="card intro"><div class="badge"><i class="ic">' + icon("compass") + '</i></div><div class="txt"><h4>' + L(ORIENTATION, "title") + '</h4><div class="goal">' + L(ORIENTATION, "goal") + '</div></div>' + viewBtn(ORIENTATION) + '</div><div class="shelf">';
   PHASES.forEach(function (ph, i) {
     ph.items.forEach(function (it) { ALL[it.file] = it; });
-    html += '<button type="button" class="tile" data-phase="' + i + '"><div class="badge"><i class="ic">' + icon(ph.icon) + '</i></div><div class="tx"><h3>' + ph.name + '</h3><div class="sub">' + ph.range + '</div></div><span class="more"><span class="lbl">Xem 4 bộ tài liệu</span><i class="ic">' + icon("arrow") + '</i></span></button>';
+    html += '<button type="button" class="tile" data-phase="' + i + '"><div class="badge"><i class="ic">' + icon(ph.icon) + '</i></div><div class="tx"><h3>' + L(ph, "name") + '</h3><div class="sub">' + L(ph, "range") + '</div></div><span class="more"><span class="lbl">' + T("Xem 4 bộ tài liệu", "See 4 handouts") + '</span><i class="ic">' + icon("arrow") + '</i></span></button>';
   });
   document.getElementById("phases").innerHTML = html + '</div>';
 }
 
 /* Pop-up dùng chung cho giai đoạn và tuần luyện */
-var pop = document.getElementById("pop");
+var pop = document.getElementById("pop"), lastPop = null;
 function openPop(ic, title, sub, body) {
   document.getElementById("pi").innerHTML = icon(ic);
   document.getElementById("pt").textContent = title;
@@ -473,15 +509,15 @@ function openPop(ic, title, sub, body) {
   pop.classList.add("open"); document.body.classList.add("locked");
   document.getElementById("pclose").focus();
 }
-function closePop() { pop.classList.remove("open"); document.body.classList.remove("locked"); }
+function closePop() { lastPop = null; pop.classList.remove("open"); document.body.classList.remove("locked"); }
 document.getElementById("pclose").addEventListener("click", closePop);
 pop.addEventListener("click", function (e) { if (e.target === pop) closePop(); });
 document.addEventListener("click", function (e) {
   var v = e.target.closest(".view"); if (v) { showDoc(v.dataset.file); return; }
   var t = e.target.closest("[data-phase]");
-  if (t) { var ph = PHASES[+t.dataset.phase]; openPop(ph.icon, ph.name, ph.range, '<div class="cards">' + ph.items.map(card).join("") + '</div>'); return; }
+  if (t) { var ph = PHASES[+t.dataset.phase]; (lastPop = function () { openPop(ph.icon, L(ph, "name"), L(ph, "range"), '<div class="cards">' + ph.items.map(card).join("") + '</div>'); })(); return; }
   var w = e.target.closest("[data-week]");
-  if (w) { var tpl = document.getElementById("w" + w.dataset.week); openPop(tpl.dataset.icon, tpl.dataset.title, "Tuần " + w.dataset.week + " · luyện tại nhà", tpl.innerHTML); }
+  if (w) { var tpl = document.getElementById("w" + w.dataset.week); (lastPop = function () { openPop(tpl.dataset.icon, T(tpl.dataset.title, tpl.dataset.titleEn || tpl.dataset.title), T("Tuần " + w.dataset.week + " · luyện tại nhà", "Week " + w.dataset.week + " · home practice"), tpl.innerHTML); })(); }
 });
 
 async function unlockWith(key) {
@@ -498,12 +534,13 @@ async function unlockWith(key) {
 /* Trình xem: giải mã trong bộ nhớ, vẽ từng trang lên canvas, không tạo đường dẫn tải về */
 pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 var viewer = document.getElementById("viewer"), pages = document.getElementById("vpages"), current = 0, openFile = null, zoom = 1, ZOOMS = [1, 1.5, 2, 2.5];
+function setViewerTitle(it) { document.getElementById("vt").textContent = (it.n ? T("Buổi ", "Session ") + it.n + " · " : "") + L(it, "title"); }
 async function showDoc(file) {
   var it = ALL[file], token = ++current, keepScroll = openFile === file ? pages.scrollTop / Math.max(pages.scrollHeight, 1) : 0;
   if (openFile !== file) zoom = 1;
   openFile = file;
-  document.getElementById("vt").textContent = (it.n ? "Buổi " + it.n + " · " : "") + it.title;
-  if (!pages.firstChild) pages.innerHTML = '<div class="status">Đang mở tài liệu…</div>';
+  setViewerTitle(it);
+  if (!pages.firstChild) pages.innerHTML = '<div class="status">' + T("Đang mở tài liệu…", "Opening handout…") + '</div>';
   viewer.classList.add("open"); document.body.classList.add("viewing");
   try {
     var bytes = await unseal(await fetchBin(file + ".bin"), KEY);
@@ -523,7 +560,7 @@ async function showDoc(file) {
     }
     pdf.destroy();
   } catch (e) {
-    if (token === current) pages.innerHTML = '<div class="status">Chưa mở được tài liệu. Vui lòng kiểm tra kết nối mạng và thử lại.</div>';
+    if (token === current) pages.innerHTML = '<div class="status">' + T("Chưa mở được tài liệu. Vui lòng kiểm tra kết nối mạng và thử lại.", "Could not open the handout. Please check your connection and try again.") + '</div>';
   }
 }
 function setZoom(d) {
@@ -544,9 +581,9 @@ document.getElementById("gate").addEventListener("submit", async function (e) {
   e.preventDefault();
   var msg = document.getElementById("msg"), go = document.getElementById("go");
   var v = document.getElementById("code").value.trim().toUpperCase();
-  if (!v) { msg.className = "msg err"; msg.textContent = "Vui lòng nhập mã lớp."; return; }
-  if (!(window.crypto && crypto.subtle)) { msg.className = "msg err"; msg.textContent = "Trình duyệt này chưa hỗ trợ. Vui lòng mở bằng Chrome hoặc Safari bản mới."; return; }
-  go.disabled = true; msg.className = "msg"; msg.textContent = "Đang kiểm tra mã…";
+  if (!v) { msg.className = "msg err"; msg.textContent = T("Vui lòng nhập mã lớp.", "Please enter the class code."); return; }
+  if (!(window.crypto && crypto.subtle)) { msg.className = "msg err"; msg.textContent = T("Trình duyệt này chưa hỗ trợ. Vui lòng mở bằng Chrome hoặc Safari bản mới.", "This browser is not supported. Please use an up-to-date Chrome or Safari."); return; }
+  go.disabled = true; msg.className = "msg"; msg.textContent = T("Đang kiểm tra mã…", "Checking code…");
   try {
     var raw = await deriveRaw(v), key = await useRaw(raw);
     try { sessionStorage.setItem("azj_k", b64(raw)); } catch (e2) {}
@@ -556,12 +593,13 @@ document.getElementById("gate").addEventListener("submit", async function (e) {
   } catch (err) {
     msg.className = "msg err";
     msg.textContent = err && err.message && err.message.indexOf("fetch") === 0
-      ? "Chưa tải được dữ liệu. Vui lòng kiểm tra kết nối mạng."
-      : "Mã lớp chưa đúng. Vui lòng kiểm tra lại tin nhắn Zalo hoặc liên hệ trung tâm.";
+      ? T("Chưa tải được dữ liệu. Vui lòng kiểm tra kết nối mạng.", "Could not load the data. Please check your connection.")
+      : T("Mã lớp chưa đúng. Vui lòng kiểm tra lại tin nhắn Zalo hoặc liên hệ trung tâm.", "That class code is not correct. Please check the Zalo message or contact the centre.");
   }
   go.disabled = false;
 });
 
+applyLang();
 (async function () {
   try { var s = sessionStorage.getItem("azj_k"); if (s) await unlockWith(await useRaw(unb64(s))); } catch (e) {}
 })();
