@@ -453,7 +453,7 @@ document.getElementById("lang").addEventListener("click", function () {
   applyLang();
   if (KEY) render();
   if (pop.classList.contains("open") && lastPop) lastPop();
-  if (viewer.classList.contains("open") && openFile) setViewerTitle(ALL[openFile]);
+  if (viewer.classList.contains("open") && openFile) showDoc(openFile);
 });
 
 var DATA = "data/", KEY = null, ALL = {};
@@ -536,17 +536,17 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs
 var viewer = document.getElementById("viewer"), pages = document.getElementById("vpages"), current = 0, openFile = null, zoom = 1, ZOOMS = [1, 1.5, 2, 2.5];
 function setViewerTitle(it) { document.getElementById("vt").textContent = (it.n ? T("Buổi ", "Session ") + it.n + " · " : "") + L(it, "title"); }
 async function showDoc(file) {
-  var it = ALL[file], token = ++current, keepScroll = openFile === file ? pages.scrollTop / Math.max(pages.scrollHeight, 1) : 0;
+  var it = ALL[file], token = ++current, keepScroll = openFile === file && pages.dataset.lang === document.documentElement.lang ? pages.scrollTop / Math.max(pages.scrollHeight, 1) : 0;
   if (openFile !== file) zoom = 1;
   openFile = file;
   setViewerTitle(it);
   if (!pages.firstChild) pages.innerHTML = '<div class="status">' + T("Đang mở tài liệu…", "Opening handout…") + '</div>';
   viewer.classList.add("open"); document.body.classList.add("viewing");
   try {
-    var bytes = await unseal(await fetchBin(file + ".bin"), KEY);
+    var bytes = await unseal(await fetchBin((isEN() ? "en/" : "") + file + ".bin"), KEY);
     var pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
     if (token !== current) return;
-    pages.innerHTML = "";
+    pages.innerHTML = ""; pages.dataset.lang = document.documentElement.lang;
     var width = Math.min(pages.clientWidth - 24, 860) * zoom, dpr = Math.min(window.devicePixelRatio || 1, 2);
     for (var p = 1; p <= pdf.numPages; p++) {
       var page = await pdf.getPage(p);
